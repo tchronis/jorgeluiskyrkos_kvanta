@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.jorgeluiskyrkos.kvanta",
+      "nativeLanguage": "el"
+    },
+    "jhipsterVersion": "5.0.0",
+    "applicationType": "monolith",
+    "baseName": "jorgeluiskyrkos",
+    "packageName": "com.jorgeluiskyrkos.kvanta",
+    "packageFolder": "com/jorgeluiskyrkos/kvanta",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "584dc028219cfaeb283bc8a32ac417c6fef35775",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "el",
+    "languages": [
+      "el",
+      "en"
+    ]
+  }
+}
