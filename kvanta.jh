@@ -1,0 +1,36 @@
+//Paste the following into https://start.jhipster.tech/jdl-studio/
+//jhipster import-jdl kvanta.jh --force
+
+entity Action {
+    name String
+    email String
+    address String required
+    depositReceipt ImageBlob required
+    messageText String
+    visible Boolean
+}
+
+entity Organization {
+    name String required
+}
+
+entity Bank {
+    name String required
+    account String required
+    iban String required
+}
+
+entity VerifiedAction {
+   depositAmount Double required
+   dateInstant Instant required
+}
+
+relationship OneToOne {
+    VerifiedAction{action(address)} to Action
+    VerifiedAction{bank(account)} to Bank
+}
+
+relationship ManyToOne {
+    Bank{organization(name)} to Organization // dropdown in BankAccount to select an Organization
+}
+

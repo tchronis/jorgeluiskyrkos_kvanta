@@ -38,6 +38,10 @@ public class CacheConfiguration {
             cm.createCache(com.jorgeluiskyrkos.kvanta.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.jorgeluiskyrkos.kvanta.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.jorgeluiskyrkos.kvanta.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.jorgeluiskyrkos.kvanta.domain.Action.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jorgeluiskyrkos.kvanta.domain.Organization.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jorgeluiskyrkos.kvanta.domain.Bank.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jorgeluiskyrkos.kvanta.domain.VerifiedAction.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,46 @@
+{
+    "name": "VerifiedAction",
+    "fields": [
+        {
+            "fieldName": "depositAmount",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateInstant",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "action",
+            "otherEntityName": "action",
+            "otherEntityField": "address",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "verifiedAction"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bank",
+            "otherEntityName": "bank",
+            "otherEntityField": "account",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "verifiedAction"
+        }
+    ],
+    "changelogDate": "20180624124803",
+    "entityTableName": "verified_action",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

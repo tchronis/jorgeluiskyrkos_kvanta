@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="action">
+            <h2><span jhiTranslate="jorgeluiskyrkosApp.action.detail.title">Action</span> {{action.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.name">Name</span></dt>
+                <dd>
+                    <span>{{action.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.email">Email</span></dt>
+                <dd>
+                    <span>{{action.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.address">Address</span></dt>
+                <dd>
+                    <span>{{action.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.depositReceipt">Deposit Receipt</span></dt>
+                <dd>
+                    <div *ngIf="action.depositReceipt">
+                        <a (click)="openFile(action.depositReceiptContentType, action.depositReceipt)">
+                            <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-width: 100%;" alt="action image"/>
+                        </a>
+                        {{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.messageText">Message Text</span></dt>
+                <dd>
+                    <span>{{action.messageText}}</span>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.visible">Visible</span></dt>
+                <dd>
+                    <span>{{action.visible}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/action', action.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
