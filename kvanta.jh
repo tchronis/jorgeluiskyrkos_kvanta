@@ -5,7 +5,7 @@ entity Action {
     name String
     email String
     address String required
-    depositReceipt ImageBlob required
+    depositReceipt ImageBlob
     messageText String
     visible Boolean
 }

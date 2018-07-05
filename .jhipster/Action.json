@@ -19,10 +19,7 @@
         {
             "fieldName": "depositReceipt",
             "fieldType": "byte[]",
-            "fieldTypeBlobContent": "image",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldTypeBlobContent": "image"
         },
         {
             "fieldName": "messageText",
