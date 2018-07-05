@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { VerifiedAction } from 'app/shared/model/verified-action.model';
 import { VerifiedActionService } from './verified-action.service';
 import { VerifiedActionComponent } from './verified-action.component';
@@ -18,9 +19,9 @@ export class VerifiedActionResolve implements Resolve<IVerifiedAction> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).map((verifiedAction: HttpResponse<VerifiedAction>) => verifiedAction.body);
+            return this.service.find(id).pipe(map((verifiedAction: HttpResponse<VerifiedAction>) => verifiedAction.body));
         }
-        return Observable.of(new VerifiedAction());
+        return of(new VerifiedAction());
     }
 }
 

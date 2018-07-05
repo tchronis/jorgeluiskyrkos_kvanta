@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { UserRouteAccessService } from 'app/core';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Organization } from 'app/shared/model/organization.model';
 import { OrganizationService } from './organization.service';
 import { OrganizationComponent } from './organization.component';
@@ -18,9 +19,9 @@ export class OrganizationResolve implements Resolve<IOrganization> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const id = route.params['id'] ? route.params['id'] : null;
         if (id) {
-            return this.service.find(id).map((organization: HttpResponse<Organization>) => organization.body);
+            return this.service.find(id).pipe(map((organization: HttpResponse<Organization>) => organization.body));
         }
-        return Observable.of(new Organization());
+        return of(new Organization());
     }
 }
 
