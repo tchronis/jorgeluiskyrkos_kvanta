@@ -1,0 +1,25 @@
+
+{
+    "jorgeluiskyrkosApp": {
+        "verifiedAction" : {
+            "home": {
+                "title": "Verified Actions",
+                "createLabel": "Δημιουργήστε ένα νέο Verified Action",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Verified Action"
+            },
+            "created": "Ένα νέο Verified Action έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Verified Action έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Verified Action έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Verified Action {{ id }};"
+            },
+            "detail": {
+                "title": "Verified Action"
+            },
+            "depositAmount": "Deposit Amount",
+            "dateInstant": "Date Instant",
+            "action": "Action",
+            "bank": "Bank"
+        }
+    }
+}

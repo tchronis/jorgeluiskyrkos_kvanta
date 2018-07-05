@@ -1,0 +1,25 @@
+
+{
+    "jorgeluiskyrkosApp": {
+        "bank" : {
+            "home": {
+                "title": "Banks",
+                "createLabel": "Δημιουργήστε ένα νέο Bank",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Bank"
+            },
+            "created": "Ένα νέο Bank έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Bank έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Bank έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Bank {{ id }};"
+            },
+            "detail": {
+                "title": "Bank"
+            },
+            "name": "Name",
+            "account": "Account",
+            "iban": "Iban",
+            "organization": "Organization"
+        }
+    }
+}

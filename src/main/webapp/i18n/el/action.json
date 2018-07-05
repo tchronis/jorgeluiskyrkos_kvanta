@@ -1,0 +1,27 @@
+
+{
+    "jorgeluiskyrkosApp": {
+        "action" : {
+            "home": {
+                "title": "Actions",
+                "createLabel": "Δημιουργήστε ένα νέο Action",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Action"
+            },
+            "created": "Ένα νέο Action έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Action έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Action έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Action {{ id }};"
+            },
+            "detail": {
+                "title": "Action"
+            },
+            "name": "Name",
+            "email": "Email",
+            "address": "Address",
+            "depositReceipt": "Deposit Receipt",
+            "messageText": "Message Text",
+            "visible": "Visible"
+        }
+    }
+}

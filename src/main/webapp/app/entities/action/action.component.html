@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jorgeluiskyrkosApp.action.home.title">Actions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-action" [routerLink]="['/action/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jorgeluiskyrkosApp.action.home.createLabel">
+            Create new Action
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="actions">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.name">Name</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.email">Email</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.address">Address</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.depositReceipt">Deposit Receipt</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.messageText">Message Text</span></th>
+            <th><span jhiTranslate="jorgeluiskyrkosApp.action.visible">Visible</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let action of actions ;trackBy: trackId">
+                <td><a [routerLink]="['/action', action.id, 'view' ]">{{action.id}}</a></td>
+                <td>{{action.name}}</td>
+                <td>{{action.email}}</td>
+                <td>{{action.address}}</td>
+                <td>
+                    <a *ngIf="action.depositReceipt" (click)="openFile(action.depositReceiptContentType, action.depositReceipt)">
+                        <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-height: 30px;" alt="action image"/>
+                    </a>
+                    <span *ngIf="action.depositReceipt">{{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}</span>
+                </td>
+                <td>{{action.messageText}}</td>
+                <td>{{action.visible}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/action', action.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/action', action.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'action/'+ action.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+
+{
+    "jorgeluiskyrkosApp": {
+        "organization" : {
+            "home": {
+                "title": "Organizations",
+                "createLabel": "Δημιουργήστε ένα νέο Organization",
+                "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Organization"
+            },
+            "created": "Ένα νέο Organization έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+            "updated": "Ένα Organization έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+            "deleted": "Ένα Organization έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+            "delete": {
+                "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Organization {{ id }};"
+            },
+            "detail": {
+                "title": "Organization"
+            },
+            "name": "Name"
+        }
+    }
+}
