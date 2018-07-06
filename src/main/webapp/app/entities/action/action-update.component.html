@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-action-heading">Εισαγωγή καταθετήριου και διεύθυνσης για την αποστολή του βιβλίου</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!action.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="action.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Όνομα</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="action.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email (για επικοινωνία σε περίπτωση κάποιας δυσλειτουργίας)</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="action.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_address">Διεύθυνση (οδός αριθμός, Περιοχή, ΤΚ)</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="action.address" required/>
+                    <div [hidden]="!(editForm.controls.address?.dirty && editForm.controls.address?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.address?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_depositReceipt">Καταθετήριο (σκαναρισμένη εικόνα)</label>
+                    <div>
+                        <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-height: 100px;" *ngIf="action.depositReceipt" alt="action image"/>
+                        <div *ngIf="action.depositReceipt" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}</span>
+                            <button type="button" (click)="clearInputImage('depositReceipt', 'depositReceiptContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_depositReceipt" (change)="setFileData($event, action, 'depositReceipt', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="depositReceipt" id="field_depositReceipt"
+                        [(ngModel)]="action.depositReceipt" />
+                    <input type="hidden" class="form-control" name="depositReceiptContentType" id="field_depositReceiptContentType"
+                        [(ngModel)]="action.depositReceiptContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_messageText">Μύνημα προς τον jorgeluiskyrkos</label>
+                    <input type="text" class="form-control" name="messageText" id="field_messageText"
+                        [(ngModel)]="action.messageText" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_visible">Θέλετε να συμπεριληφθεί το όνομα σας στην λίστα με τους δωρητές?</label>
+                    <input type="checkbox" class="form-control" name="visible" id="field_visible"
+                        [(ngModel)]="action.visible" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

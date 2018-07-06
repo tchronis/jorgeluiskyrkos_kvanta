@@ -1,0 +1,25 @@
+
+{
+    "jorgeluiskyrkosApp": {
+        "verifiedAction" : {
+            "home": {
+                "title": "Verified Actions",
+                "createLabel": "Create a new Verified Action",
+                "createOrEditLabel": "Create or edit a Verified Action"
+            },
+            "created": "A new Verified Action is created with identifier {{ param }}",
+            "updated": "A Verified Action is updated with identifier {{ param }}",
+            "deleted": "A Verified Action is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Verified Action {{ id }}?"
+            },
+            "detail": {
+                "title": "Verified Action"
+            },
+            "depositAmount": "Deposit Amount",
+            "dateInstant": "Date Instant",
+            "action": "Action",
+            "bank": "Bank"
+        }
+    }
+}

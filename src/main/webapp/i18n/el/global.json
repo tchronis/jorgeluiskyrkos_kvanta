@@ -7,10 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "action": "Action",
+                "organization": "Organization",
+                "bank": "Bank",
+                "verifiedAction": "Verified Action",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
-				"main": "Λογαριασμός",
+				"main": "Διαχειριστής",
 				"settings": "Ρυθμίσεις",
 				"password": "Κωδικός",
 				"sessions": "Συνδέσεις",
