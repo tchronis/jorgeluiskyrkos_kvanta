@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-            <h2 id="jhi-action-heading" jhiTranslate="jorgeluiskyrkosApp.action.home.createOrEditLabel">Create or edit a Action</h2>
+            <h2 id="jhi-action-heading">Εισαγωγή καταθετήριου και διεύθυνσης για την αποστολή του βιβλίου</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!action.id">
@@ -10,28 +10,28 @@
                         [(ngModel)]="action.id" readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.name" for="field_name">Name</label>
+                    <label class="form-control-label" for="field_name">Όνομα</label>
                     <input type="text" class="form-control" name="name" id="field_name"
                         [(ngModel)]="action.name" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.email" for="field_email">Email</label>
+                    <label class="form-control-label" for="field_email">Email (για επικοινωνία σε περίπτωση κάποιας δυσλειτουργίας)</label>
                     <input type="text" class="form-control" name="email" id="field_email"
                         [(ngModel)]="action.email" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.address" for="field_address">Address</label>
+                    <label class="form-control-label" for="field_address">Διεύθυνση (οδός αριθμός, Περιοχή, ΤΚ)</label>
                     <input type="text" class="form-control" name="address" id="field_address"
                         [(ngModel)]="action.address" required/>
                     <div [hidden]="!(editForm.controls.address?.dirty && editForm.controls.address?.invalid)">
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.address?.errors?.required" jhiTranslate="entity.validation.required">
+                        [hidden]="!editForm.controls.address?.errors?.required">
                         This field is required.
                         </small>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.depositReceipt" for="field_depositReceipt">Deposit Receipt</label>
+                    <label class="form-control-label" for="field_depositReceipt">Καταθετήριο (σκαναρισμένη εικόνα)</label>
                     <div>
                         <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-height: 100px;" *ngIf="action.depositReceipt" alt="action image"/>
                         <div *ngIf="action.depositReceipt" class="form-text text-danger clearfix">
@@ -48,12 +48,12 @@
                         [(ngModel)]="action.depositReceiptContentType" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.messageText" for="field_messageText">Message Text</label>
+                    <label class="form-control-label" for="field_messageText">Μύνημα προς τον jorgeluiskyrkos</label>
                     <input type="text" class="form-control" name="messageText" id="field_messageText"
                         [(ngModel)]="action.messageText" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jorgeluiskyrkosApp.action.visible" for="field_visible">Visible</label>
+                    <label class="form-control-label" for="field_visible">Θέλετε να συμπεριληφθεί το όνομα σας στην λίστα με τους δωρητές?</label>
                     <input type="checkbox" class="form-control" name="visible" id="field_visible"
                         [(ngModel)]="action.visible" />
                 </div>

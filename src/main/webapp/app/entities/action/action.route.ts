@@ -54,7 +54,7 @@ export const actionRoute: Routes = [
             action: ActionResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [],
             pageTitle: 'jorgeluiskyrkosApp.action.home.title'
         },
         canActivate: [UserRouteAccessService]
