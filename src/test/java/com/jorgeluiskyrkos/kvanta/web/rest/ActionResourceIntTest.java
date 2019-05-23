@@ -60,6 +60,9 @@ public class ActionResourceIntTest {
     private static final Boolean DEFAULT_VISIBLE = false;
     private static final Boolean UPDATED_VISIBLE = true;
 
+    private static final Boolean DEFAULT_VERIFIED = false;
+    private static final Boolean UPDATED_VERIFIED = true;
+
     @Autowired
     private ActionRepository actionRepository;
 
@@ -105,7 +108,8 @@ public class ActionResourceIntTest {
             .depositReceipt(DEFAULT_DEPOSIT_RECEIPT)
             .depositReceiptContentType(DEFAULT_DEPOSIT_RECEIPT_CONTENT_TYPE)
             .messageText(DEFAULT_MESSAGE_TEXT)
-            .visible(DEFAULT_VISIBLE);
+            .visible(DEFAULT_VISIBLE)
+            .verified(DEFAULT_VERIFIED);
         return action;
     }
 
@@ -136,6 +140,7 @@ public class ActionResourceIntTest {
         assertThat(testAction.getDepositReceiptContentType()).isEqualTo(DEFAULT_DEPOSIT_RECEIPT_CONTENT_TYPE);
         assertThat(testAction.getMessageText()).isEqualTo(DEFAULT_MESSAGE_TEXT);
         assertThat(testAction.isVisible()).isEqualTo(DEFAULT_VISIBLE);
+        assertThat(testAction.isVerified()).isEqualTo(DEFAULT_VERIFIED);
     }
 
     @Test
@@ -192,7 +197,8 @@ public class ActionResourceIntTest {
             .andExpect(jsonPath("$.[*].depositReceiptContentType").value(hasItem(DEFAULT_DEPOSIT_RECEIPT_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].depositReceipt").value(hasItem(Base64Utils.encodeToString(DEFAULT_DEPOSIT_RECEIPT))))
             .andExpect(jsonPath("$.[*].messageText").value(hasItem(DEFAULT_MESSAGE_TEXT.toString())))
-            .andExpect(jsonPath("$.[*].visible").value(hasItem(DEFAULT_VISIBLE.booleanValue())));
+            .andExpect(jsonPath("$.[*].visible").value(hasItem(DEFAULT_VISIBLE.booleanValue())))
+            .andExpect(jsonPath("$.[*].verified").value(hasItem(DEFAULT_VERIFIED.booleanValue())));
     }
     
 
@@ -213,7 +219,8 @@ public class ActionResourceIntTest {
             .andExpect(jsonPath("$.depositReceiptContentType").value(DEFAULT_DEPOSIT_RECEIPT_CONTENT_TYPE))
             .andExpect(jsonPath("$.depositReceipt").value(Base64Utils.encodeToString(DEFAULT_DEPOSIT_RECEIPT)))
             .andExpect(jsonPath("$.messageText").value(DEFAULT_MESSAGE_TEXT.toString()))
-            .andExpect(jsonPath("$.visible").value(DEFAULT_VISIBLE.booleanValue()));
+            .andExpect(jsonPath("$.visible").value(DEFAULT_VISIBLE.booleanValue()))
+            .andExpect(jsonPath("$.verified").value(DEFAULT_VERIFIED.booleanValue()));
     }
     @Test
     @Transactional
@@ -242,7 +249,8 @@ public class ActionResourceIntTest {
             .depositReceipt(UPDATED_DEPOSIT_RECEIPT)
             .depositReceiptContentType(UPDATED_DEPOSIT_RECEIPT_CONTENT_TYPE)
             .messageText(UPDATED_MESSAGE_TEXT)
-            .visible(UPDATED_VISIBLE);
+            .visible(UPDATED_VISIBLE)
+            .verified(UPDATED_VERIFIED);
 
         restActionMockMvc.perform(put("/api/actions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -260,6 +268,7 @@ public class ActionResourceIntTest {
         assertThat(testAction.getDepositReceiptContentType()).isEqualTo(UPDATED_DEPOSIT_RECEIPT_CONTENT_TYPE);
         assertThat(testAction.getMessageText()).isEqualTo(UPDATED_MESSAGE_TEXT);
         assertThat(testAction.isVisible()).isEqualTo(UPDATED_VISIBLE);
+        assertThat(testAction.isVerified()).isEqualTo(UPDATED_VERIFIED);
     }
 
     @Test

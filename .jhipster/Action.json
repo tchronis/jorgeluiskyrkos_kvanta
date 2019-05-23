@@ -28,6 +28,10 @@
         {
             "fieldName": "visible",
             "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "verified",
+            "fieldType": "Boolean"
         }
     ],
     "relationships": [],

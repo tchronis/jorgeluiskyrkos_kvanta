@@ -21,7 +21,8 @@
             "address": "Address",
             "depositReceipt": "Deposit Receipt",
             "messageText": "Message Text",
-            "visible": "Visible"
+            "visible": "Visible",
+            "verified": "Verified"
         }
     }
 }

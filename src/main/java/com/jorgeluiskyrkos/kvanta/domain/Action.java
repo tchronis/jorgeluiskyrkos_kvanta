@@ -47,6 +47,9 @@ public class Action implements Serializable {
     @Column(name = "visible")
     private Boolean visible;
 
+    @Column(name = "verified")
+    private Boolean verified;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -146,6 +149,19 @@ public class Action implements Serializable {
     public void setVisible(Boolean visible) {
         this.visible = visible;
     }
+
+    public Boolean isVerified() {
+        return verified;
+    }
+
+    public Action verified(Boolean verified) {
+        this.verified = verified;
+        return this;
+    }
+
+    public void setVerified(Boolean verified) {
+        this.verified = verified;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -179,6 +195,7 @@ public class Action implements Serializable {
             ", depositReceiptContentType='" + getDepositReceiptContentType() + "'" +
             ", messageText='" + getMessageText() + "'" +
             ", visible='" + isVisible() + "'" +
+            ", verified='" + isVerified() + "'" +
             "}";
     }
 }
