@@ -59,8 +59,38 @@
             <span class="float-left">Ο Γιώργος Λούης Κύρκος γεννήθηκε το 1973 στην Αθήνα. Πέρασε την παιδική του ηλικία παίζοντας ποδόσφαιρο στις γειτονιές του Νέου Κόσμου. Μεγαλώνοντας, αγάπησε την ιστορία, τη φιλοσοφία και τα βιβλία.  Σπούδασε μηχανικός και εργάστηκε στη βιομηχανία. Ποτέ δεν σταμάτησε να αναρωτιέται. </span>
         </div>
     </div>
-    <div class="col-md-3">
-        <div style="background-color: #0a6ebd;height: 100% ;width: auto;"></div>
+    <div class="col-md-3" style="height: 497px;overflow-y: auto">
+        <div class="over-table-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <span>Δωρητές: {{countDonators()}}</span>
+                </div>
+                <div class="col-md-6">
+                    <span>Σύνολο: {{totalDonations()}}€</span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Όνοματεπώνυμο</th>
+                <th scope="col">Ποσό</th>
+                <th scope="col">Ημερομηνία</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let donator of donators; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>
+                    {{ donator.name }}
+                </td>
+                <td>{{ donator.amount | number }}€</td>
+                <td>{{ donator.date | date }}</td>
+            </tr>
+
+            </tbody>
+        </table>
     </div>
 
 
