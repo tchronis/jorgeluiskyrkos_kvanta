@@ -4,7 +4,7 @@ import { JhiEventManager } from 'ng-jhipster';
 
 import { LoginModalService, Principal, Account } from 'app/core';
 
-import { IDonator } from 'app/shared/model/donator';
+import { IDonator } from 'app/shared/model/donator.model';
 
 const DONATORS: IDonator[] = [
     {
