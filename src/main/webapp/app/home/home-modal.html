@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h4 class="modal-title">Λίστα Φιλανθρωπικών Ιδρυμάτων</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('X button clicked')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ίδρυμα</th>
+            <th scope="col">IBAN</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let organization of organizations; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+                {{ organization.name }}
+            </td>
+            <td>{{ organization.iban }}€</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Κλείσιμο</button>
+</div>

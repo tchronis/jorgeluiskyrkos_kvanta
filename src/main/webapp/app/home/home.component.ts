@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { LoginModalService, Principal, Account } from 'app/core';
 
 import { IDonator } from 'app/shared/model/donator.model';
+import { HomeModalContentComponent } from 'app/home/home-modal.component';
 
 const DONATORS: IDonator[] = [
     {
@@ -274,7 +275,12 @@ export class HomeComponent implements OnInit {
     modalRef: NgbModalRef;
     donators = DONATORS;
 
-    constructor(private principal: Principal, private loginModalService: LoginModalService, private eventManager: JhiEventManager) {}
+    constructor(
+        private principal: Principal,
+        private loginModalService: LoginModalService,
+        private eventManager: JhiEventManager,
+        private modalService: NgbModal
+    ) {}
 
     ngOnInit() {
         this.principal.identity().then(account => {
@@ -309,5 +315,9 @@ export class HomeComponent implements OnInit {
 
     countDonators() {
         return this.donators.length;
+    }
+
+    open() {
+        const modalRef = this.modalService.open(HomeModalContentComponent);
     }
 }

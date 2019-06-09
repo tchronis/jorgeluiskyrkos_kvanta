@@ -18,6 +18,7 @@ import { JorgeluiskyrkosAccountModule } from './account/account.module';
 import { JorgeluiskyrkosEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { HomeModalContentComponent } from 'app/home/home-modal.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,15 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JorgeluiskyrkosEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent,
+        HomeModalContentComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
