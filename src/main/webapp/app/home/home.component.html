@@ -62,12 +62,12 @@
     <div class="col-md-3 donators-table">
         <div class="over-table-header">
             <div class="row">
-                <div class="col-md-6">
-                    <span>Δωρητές: {{countDonators()}}</span>
+                <div class="col-md-12">
+                    <span>Δωρητές: {{ donatorsCounter }}</span>
                 </div>
-                <div class="col-md-6">
-                    <span>Σύνολο: {{totalDonations()}}€</span>
-                </div>
+<!--                <div class="col-md-6">-->
+<!--                    <span>Σύνολο: {{totalDonations()}}€</span>-->
+<!--                </div>-->
             </div>
         </div>
         <table class="table table-striped">
@@ -75,8 +75,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Όνοματεπώνυμο</th>
-                <th scope="col">Ποσό</th>
-                <th scope="col">Ημερομηνία</th>
+<!--                <th scope="col">Ποσό</th>-->
+<!--                <th scope="col">Ημερομηνία</th>-->
             </tr>
             </thead>
             <tbody>
@@ -85,8 +85,8 @@
                 <td>
                     {{ donator.name }}
                 </td>
-                <td>{{ donator.amount | number }}€</td>
-                <td>{{ donator.date | date }}</td>
+<!--                <td>{{ donator.amount | number }}€</td>-->
+<!--                <td>{{ donator.date | date }}</td>-->
             </tr>
 
             </tbody>
