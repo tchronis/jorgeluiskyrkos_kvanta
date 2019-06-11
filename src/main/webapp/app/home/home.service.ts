@@ -10,7 +10,7 @@ type EntityArrayResponseType = HttpResponse<IDonator[]>;
 
 @Injectable({ providedIn: 'root' })
 export class HomeService {
-    private resourceUrl = SERVER_API_URL + 'api/actions';
+    private resourceUrl = SERVER_API_URL + 'api/verified-actions';
 
     constructor(private http: HttpClient) {}
 
