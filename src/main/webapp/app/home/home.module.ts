@@ -7,10 +7,11 @@ import { JorgeluiskyrkosSharedModule } from 'app/shared';
 import { HOME_ROUTE, HomeComponent } from './';
 
 import { HomeModalContentComponent } from 'app/home/home-modal.component';
+import { FilteredDonatorsPipe } from 'app/home/home.pipe';
 
 @NgModule({
     imports: [JorgeluiskyrkosSharedModule, RouterModule.forChild([HOME_ROUTE]), BrowserModule, NgbModule],
-    declarations: [HomeComponent],
+    declarations: [HomeComponent, FilteredDonatorsPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     entryComponents: [HomeModalContentComponent]
 })

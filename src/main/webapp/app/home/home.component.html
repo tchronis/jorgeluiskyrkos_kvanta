@@ -80,9 +80,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let donator of donators; index as i" >
-                <td *ngIf="donator.verified" scope="row">{{ i + 1 }}</td>
-                <td *ngIf="donator.verified">
+            <tr *ngFor="let donator of donators | filteredDonators; index as i" >
+                <td *ngIf="donator.verified && donator.visible" scope="row">{{ i + 1 }}</td>
+                <td *ngIf="donator.verified && donator.visible">
                     {{ donator.name }}
                 </td>
 <!--                <td>{{ donator.amount | number }}€</td>-->

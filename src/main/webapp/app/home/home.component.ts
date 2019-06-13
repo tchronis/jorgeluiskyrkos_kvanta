@@ -334,7 +334,7 @@ export class HomeComponent implements OnInit {
     countDonators() {
         let count = 0;
         for (let i = 0; i < this.donators.length; i++) {
-            if (this.donators[i].verified && this.donators[i].visible) {
+            if (this.donators[i].verified) {
                 count++;
             }
         }
