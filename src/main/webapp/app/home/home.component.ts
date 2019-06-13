@@ -4,7 +4,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { LoginModalService, Principal, Account } from 'app/core';
 import { Subscription } from 'rxjs';
 
-import { IDonator } from 'app/shared/model/donator.model';
+import { IAction } from 'app/shared/model/action.model';
 import { HomeModalContentComponent } from 'app/home/home-modal.component';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { HomeService } from './home.service';
@@ -276,7 +276,7 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     // donaators = DONATORS;
-    donators: IDonator[];
+    donators: IAction[];
     eventSubscriber: Subscription;
     donatorsCounter: number;
 
@@ -291,9 +291,9 @@ export class HomeComponent implements OnInit {
 
     loadAll() {
         this.homeService.query().subscribe(
-            (res: HttpResponse<IDonator[]>) => {
+            (res: HttpResponse<IAction[]>) => {
                 this.donators = res.body;
-                this.donatorsCounter = this.donators.length;
+                this.donatorsCounter = this.countDonators();
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -331,9 +331,15 @@ export class HomeComponent implements OnInit {
     //     return sum;
     // }
 
-    // countDonators() {
-    //     return this.donators.length;
-    // }
+    countDonators() {
+        let count = 0;
+        for (let i = 0; i < this.donators.length; i++) {
+            if (this.donators[i].verified && this.donators[i].visible) {
+                count++;
+            }
+        }
+        return count;
+    }
 
     open() {
         const modalRef = this.modalService.open(HomeModalContentComponent);

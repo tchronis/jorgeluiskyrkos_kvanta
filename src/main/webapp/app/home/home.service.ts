@@ -4,18 +4,18 @@ import { Observable } from 'rxjs';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
-import { IDonator } from 'app/shared/model/donator.model';
+import { IAction } from 'app/shared/model/action.model';
 
-type EntityArrayResponseType = HttpResponse<IDonator[]>;
+type EntityArrayResponseType = HttpResponse<IAction[]>;
 
 @Injectable({ providedIn: 'root' })
 export class HomeService {
-    private resourceUrl = SERVER_API_URL + 'api/verified-actions';
+    private resourceUrl = SERVER_API_URL + 'api/actions';
 
     constructor(private http: HttpClient) {}
 
     query(req?: any): Observable<EntityArrayResponseType> {
         const options = createRequestOption(req);
-        return this.http.get<IDonator[]>(this.resourceUrl, { params: options, observe: 'response' });
+        return this.http.get<IAction[]>(this.resourceUrl, { params: options, observe: 'response' });
     }
 }
