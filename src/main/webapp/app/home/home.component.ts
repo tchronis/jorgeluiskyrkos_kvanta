@@ -342,7 +342,7 @@ export class HomeComponent implements OnInit {
     }
 
     open() {
-        const modalRef = this.modalService.open(HomeModalContentComponent);
+        const modalRef = this.modalService.open(HomeModalContentComponent, { size: 'lg' });
     }
 
     private onError(errorMessage: string) {
