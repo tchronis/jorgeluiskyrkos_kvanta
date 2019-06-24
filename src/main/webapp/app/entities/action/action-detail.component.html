@@ -38,6 +38,10 @@
                 <dd>
                     <span>{{action.verified}}</span>
                 </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.amount">Amount</span></dt>
+                <dd>
+                    <span>{{action.amount}}</span>
+                </dd>
             </dl>
 
             <!--
@@ -69,6 +73,8 @@
                 <div class="form-group">
                     <label class="form-control-label" for="field_visible">Η κατάθεση είναι σωστή και δικαιούται το βιβλίο.</label>
                     <input type="checkbox" class="form-control" name="visible" id="field_visible" [(ngModel)]="action.verified" />
+                    <label class="form-control-label" for="field_amount">Το ποσό που κατατέθηκε σε ευρώ είναι: </label>
+                    <input type="number" class="form-control" name="amount" id="field_amount" [(ngModel)]="action.amount" />
                 </div>
 
             </div>
