@@ -9,6 +9,7 @@ entity Action {
     messageText String
     visible Boolean
     verified Boolean
+    amount Double
 }
 
 entity Organization {
