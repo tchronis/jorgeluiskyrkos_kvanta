@@ -106,7 +106,8 @@ const ORGANIZATIONS = [
 
 @Component({
     selector: 'jhi-home-modal-content',
-    templateUrl: './home-modal.html'
+    templateUrl: './home-modal.html',
+    styleUrls: ['home.scss']
 })
 export class HomeModalContentComponent {
     organizations = ORGANIZATIONS;

@@ -1,12 +1,13 @@
-<div class="row justify-content-center">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
+<div class="flex-container">
+    <div class=" col-1-2 order-1">
+<!--        <span class="hipster img-fluid rounded"></span>-->
+        <img src="../../content/images/kvanta.gif" alt="kvanta-book">
     </div>
-    <div class="col-6">
+    <div class="col-1-4 order-2">
         <div>
             <h2><span>Το ξεπέρασμα της τύχης</span></h2>
             <hr>
-            <dl class="row-md jh-entity-details">
+            <dl class="row-md ">
                 <dt><span>Νιώθεις ευγνωμοσύνη για τους ανθρώπους που σε βοήθησαν να γίνεις αυτό που είσαι;</span></dt>
                 <dd>
                     <span></span>
@@ -59,7 +60,7 @@
             <span class="float-left">Ο Γιώργος Λούης Κύρκος γεννήθηκε το 1973 στην Αθήνα. Πέρασε την παιδική του ηλικία παίζοντας ποδόσφαιρο στις γειτονιές του Νέου Κόσμου. Μεγαλώνοντας, αγάπησε την ιστορία, τη φιλοσοφία και τα βιβλία.  Σπούδασε μηχανικός και εργάστηκε στη βιομηχανία. Ποτέ δεν σταμάτησε να αναρωτιέται. </span>
         </div>
     </div>
-    <div class="col-md-3 donators-table">
+    <div class="donators-table col-1-2 order-3">
         <div class="over-table-header">
             <div class="row">
                 <div class="col-md-12">
@@ -73,7 +74,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th scope="col">#</th>
+<!--                <th scope="col">#</th>-->
                 <th scope="col">Όνοματεπώνυμο</th>
 <!--                <th scope="col">Ποσό</th>-->
 <!--                <th scope="col">Ημερομηνία</th>-->
@@ -81,7 +82,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let donator of donators | filteredDonators; index as i" >
-                <td *ngIf="donator.verified && donator.visible" scope="row">{{ i + 1 }}</td>
+<!--                <td *ngIf="donator.verified && donator.visible" scope="row">{{ i + 1 }}</td>-->
                 <td *ngIf="donator.verified && donator.visible">
                     {{ donator.name }}
                 </td>
@@ -92,6 +93,8 @@
             </tbody>
         </table>
     </div>
-
-
+<!--    <div class="col-1-2 order-4">-->
+<!--&lt;!&ndash;        <span class="hipster img-fluid rounded"></span>&ndash;&gt;-->
+<!--        <img src="../../content/images/kvanta-front.png" alt="">-->
+<!--    </div>-->
 </div>

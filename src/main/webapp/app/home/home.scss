@@ -1,29 +1,97 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
+div img {
+    width: 100%;
+    max-width: 260px;
+}
 
 .hipster {
-    display: inline-block;
+    // display: inline-block;
     width: 347px;
     height: 497px;
-    background: url('../../content/images/hipster.png') no-repeat center top;
+    background: url('../../content/images/kvanta.gif') no-repeat center top;
     background-size: contain;
+    justify-content: flex-start;
 }
 
 .donators-table {
-    height: 497px;
+    // height: 497px;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+[class*='col-'] {
+    flex: 0 0 94%;
+    margin: 0 2%;
+}
+
+.modal-body {
+    font-size: 0.85rem;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    .hipster {
-        background: url('../../content/images/hipster2x.png') no-repeat center top;
-        background-size: contain;
+//@media only screen and (-webkit-min-device-pixel-ratio: 2),
+//    only screen and (min--moz-device-pixel-ratio: 2),
+//    only screen and (-o-min-device-pixel-ratio: 2/1),
+//    only screen and (min-device-pixel-ratio: 2),
+//    only screen and (min-resolution: 192dpi),
+//    only screen and (min-resolution: 2dppx) {
+//    .hipster {
+//        background: url('../../content/images/kvanta-front.png') no-repeat center top;
+//        background-size: contain;
+//    }
+//}
+
+@media only screen and (min-width: 300px) {
+    [class*='col-'] {
+        margin-left: 4%;
+        margin-right: 0%;
     }
+    .col-1-2 {
+        flex: 0 0 1;
+    }
+    .col-1-4 {
+        flex: 0 0 97%;
+    }
+    .order-1 {
+        order: 1;
+    }
+    .order-2 {
+        order: 2;
+    }
+    .order-3 {
+        order: 3;
+    }
+    //.order-4 {
+    //    order: 3;
+    //}
+}
+@media only screen and (min-width: 769px) {
+    .col-1-2 {
+        flex: 0 0 22%;
+    }
+    .col-1-4 {
+        flex: 0 0 42%;
+    }
+
+    .order-1 {
+        order: 1;
+    }
+    .order-2 {
+        order: 2;
+    }
+    .order-3 {
+        order: 3;
+    }
+    //.order-4 {
+    //    order: 4;
+    //}
 }
