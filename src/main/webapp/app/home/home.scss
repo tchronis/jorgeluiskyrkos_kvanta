@@ -3,7 +3,7 @@ Main page styles
 ========================================================================== */
 div img {
     width: 100%;
-    max-width: 260px;
+    min-width: 260px;
 }
 
 .hipster {
@@ -35,6 +35,11 @@ div img {
 
 .modal-body {
     font-size: 0.85rem;
+    padding: 0.5rem;
+}
+
+.modal-footer {
+    padding: 0.5rem;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
