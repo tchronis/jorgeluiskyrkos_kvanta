@@ -32,6 +32,10 @@
         {
             "fieldName": "verified",
             "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
         }
     ],
     "relationships": [],

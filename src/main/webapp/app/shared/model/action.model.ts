@@ -8,6 +8,7 @@ export interface IAction {
     messageText?: string;
     visible?: boolean;
     verified?: boolean;
+    amount?: number;
 }
 
 export class Action implements IAction {
@@ -20,7 +21,8 @@ export class Action implements IAction {
         public depositReceipt?: any,
         public messageText?: string,
         public visible?: boolean,
-        public verified?: boolean
+        public verified?: boolean,
+        public amount?: number
     ) {
         this.visible = false;
         this.verified = false;

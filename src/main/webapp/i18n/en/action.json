@@ -22,7 +22,8 @@
             "depositReceipt": "Deposit Receipt",
             "messageText": "Message Text",
             "visible": "Visible",
-            "verified": "Verified"
+            "verified": "Verified",
+            "amount": "Amount"
         }
     }
 }
