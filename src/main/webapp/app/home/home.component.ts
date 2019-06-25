@@ -331,7 +331,9 @@ export class HomeComponent implements OnInit {
     totalDonations() {
         let sum = 0;
         for (let i = 0; i < this.donators.length; i++) {
-            sum = sum + this.donators[i].amount;
+            if (this.donators[i].verified) {
+                sum = sum + this.donators[i].amount;
+            }
         }
         return sum;
     }
