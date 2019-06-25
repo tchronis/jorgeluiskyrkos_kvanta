@@ -28,7 +28,7 @@ div img {
     flex: 0 1 auto;
 }
 
-[class*='col-'] {
+[class*='col-1-'] {
     flex: 0 0 94%;
     margin: 0 2%;
 }
@@ -51,7 +51,7 @@ div img {
 //}
 
 @media only screen and (min-width: 300px) {
-    [class*='col-'] {
+    [class*='col-1-'] {
         margin-left: 4%;
         margin-right: 0%;
     }
@@ -61,6 +61,7 @@ div img {
     .col-1-4 {
         flex: 0 0 97%;
     }
+
     .order-1 {
         order: 1;
     }

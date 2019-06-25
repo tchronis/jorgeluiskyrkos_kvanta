@@ -278,10 +278,9 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     // donaators = DONATORS;
-    donators: IAction[];
+    donators: IAction[] = [];
     eventSubscriber: Subscription;
     donatorsCounter: number;
-    verifiedActions: IVerifiedAction[];
     donatorsTotal: number;
 
     constructor(
@@ -289,9 +288,7 @@ export class HomeComponent implements OnInit {
         private loginModalService: LoginModalService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private modalService: NgbModal,
-        private homeService: HomeService,
-        private verifiedActionService: VerifiedActionService
+        private modalService: NgbModal
     ) {}
 
     loadAll() {
@@ -300,14 +297,7 @@ export class HomeComponent implements OnInit {
                 this.donators = res.body;
                 console.log(this.donators);
                 this.donatorsCounter = this.countDonators();
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
-        this.verifiedActionService.query().subscribe(
-            (res: HttpResponse<IVerifiedAction[]>) => {
-                this.verifiedActions = res.body;
-                console.log(this.verifiedActions);
-                // this.donatorsTotal = this.totalDonations();
+                this.donatorsTotal = this.totalDonations();
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -337,13 +327,13 @@ export class HomeComponent implements OnInit {
         this.modalRef = this.loginModalService.open();
     }
 
-    // totalDonations() {
-    //     let sum = 0;
-    //     for (let i = 0; i < this.verifiedActions.length; i++) {
-    //         sum = sum + this.verifiedActions[i].depositAmount;
-    //     }
-    //     return sum;
-    // }
+    totalDonations() {
+        let sum = 0;
+        for (let i = 0; i < this.donators.length; i++) {
+            sum = sum + this.donators[i].amount;
+        }
+        return sum;
+    }
 
     countDonators() {
         let count = 0;
