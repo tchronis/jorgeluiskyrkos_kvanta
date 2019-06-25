@@ -3,11 +3,10 @@ Main page styles
 ========================================================================== */
 div img {
     width: 100%;
-    min-width: 260px;
 }
 
 .hipster {
-    // display: inline-block;
+    display: inline-block;
     width: 347px;
     height: 497px;
     background: url('../../content/images/kvanta.gif') no-repeat center top;
@@ -59,7 +58,7 @@ div img {
 //    }
 //}
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 320px) {
     [class*='col-1-'] {
         margin-left: 4%;
         margin-right: 0%;
@@ -83,6 +82,9 @@ div img {
     //.order-4 {
     //    order: 3;
     //}
+    .over-table-header {
+        padding: 5px 0 5px 0;
+    }
 }
 @media only screen and (min-width: 769px) {
     .col-1-2 {
