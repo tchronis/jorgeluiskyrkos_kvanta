@@ -288,7 +288,8 @@ export class HomeComponent implements OnInit {
         private loginModalService: LoginModalService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private modalService: NgbModal
+        private modalService: NgbModal,
+        private homeService: HomeService
     ) {}
 
     loadAll() {

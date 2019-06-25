@@ -15,32 +15,32 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let organization of organizations">
-            <td>
-                {{ organization.name }}
-            </td>
-            <td>
-                <tr *ngFor="let orgAccount of organization.account">
-                    <td>{{ orgAccount.bank }}</td>
-<!--                    <td>{{ acc.logariasmos }}</td>-->
-<!--                    <td>{{ acc.iban }}</td>-->
-                </tr>
-            </td>
-<!--            <td>-->
-<!--                <tr *ngFor="let acc of organization.account; index as j">-->
-<!--                    <td>{{ acc.bank }}</td>-->
-<!--                    <td>{{ acc.logariasmos }}</td>-->
-<!--                    <td>{{ acc.iban }}</td>-->
-<!--                </tr>-->
-<!--            </td>-->
-            <td>
-                <tr *ngFor="let orgAccount of organization.account">
-<!--                    <td>{{ acc.bank }}</td>-->
-<!--                    <td>{{ acc.logariasmos }}</td>-->
-                    <td>{{ orgAccount.iban }}</td>
-                </tr>
-            </td>
-        </tr>
+            <tr *ngFor="let organization of organizations">
+                <td>
+                    {{ organization.name }}
+                </td>
+                <td>
+                    <tr *ngFor="let orgAccount of organization.account">
+                        <td>{{ orgAccount.bank }}</td>
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+    <!--                    <td>{{ acc.iban }}</td>-->
+                    </tr>
+                </td>
+    <!--            <td>-->
+    <!--                <tr *ngFor="let acc of organization.account; index as j">-->
+    <!--                    <td>{{ acc.bank }}</td>-->
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+    <!--                    <td>{{ acc.iban }}</td>-->
+    <!--                </tr>-->
+    <!--            </td>-->
+                <td>
+                    <tr *ngFor="let orgAccount of organization.account">
+    <!--                    <td>{{ acc.bank }}</td>-->
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+                        <td>{{ orgAccount.iban }}</td>
+                    </tr>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
