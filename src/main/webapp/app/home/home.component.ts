@@ -8,6 +8,8 @@ import { IAction } from 'app/shared/model/action.model';
 import { HomeModalContentComponent } from 'app/home/home-modal.component';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { HomeService } from './home.service';
+import { VerifiedActionService } from 'app/entities/verified-action';
+import { IVerifiedAction } from 'app/shared/model/verified-action.model';
 
 // const DONATORS: IDonator[] = [
 //     {
@@ -279,6 +281,8 @@ export class HomeComponent implements OnInit {
     donators: IAction[];
     eventSubscriber: Subscription;
     donatorsCounter: number;
+    verifiedActions: IVerifiedAction[];
+    donatorsTotal: number;
 
     constructor(
         private principal: Principal,
@@ -286,14 +290,24 @@ export class HomeComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private modalService: NgbModal,
-        private homeService: HomeService
+        private homeService: HomeService,
+        private verifiedActionService: VerifiedActionService
     ) {}
 
     loadAll() {
         this.homeService.query().subscribe(
             (res: HttpResponse<IAction[]>) => {
                 this.donators = res.body;
+                console.log(this.donators);
                 this.donatorsCounter = this.countDonators();
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.verifiedActionService.query().subscribe(
+            (res: HttpResponse<IVerifiedAction[]>) => {
+                this.verifiedActions = res.body;
+                console.log(this.verifiedActions);
+                // this.donatorsTotal = this.totalDonations();
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -325,8 +339,8 @@ export class HomeComponent implements OnInit {
 
     // totalDonations() {
     //     let sum = 0;
-    //     for (let i = 0; i < this.donators.length; i++) {
-    //         sum = sum + this.donators[i].amount;
+    //     for (let i = 0; i < this.verifiedActions.length; i++) {
+    //         sum = sum + this.verifiedActions[i].depositAmount;
     //     }
     //     return sum;
     // }
