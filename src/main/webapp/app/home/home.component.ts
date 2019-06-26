@@ -296,7 +296,7 @@ export class HomeComponent implements OnInit {
         this.homeService.query().subscribe(
             (res: HttpResponse<IAction[]>) => {
                 this.donators = res.body;
-                console.log(this.donators);
+                // console.log(this.donators);
                 this.donatorsCounter = this.countDonators();
                 this.donatorsTotal = this.totalDonations();
             },
