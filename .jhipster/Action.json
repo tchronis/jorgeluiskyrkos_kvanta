@@ -28,6 +28,14 @@
         {
             "fieldName": "visible",
             "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "verified",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
         }
     ],
     "relationships": [],

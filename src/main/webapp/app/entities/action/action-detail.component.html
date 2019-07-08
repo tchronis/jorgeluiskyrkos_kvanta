@@ -34,8 +34,17 @@
                 <dd>
                     <span>{{action.visible}}</span>
                 </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.verified">Verified</span></dt>
+                <dd>
+                    <span>{{action.verified}}</span>
+                </dd>
+                <dt><span jhiTranslate="jorgeluiskyrkosApp.action.amount">Amount</span></dt>
+                <dd>
+                    <span>{{action.amount}}</span>
+                </dd>
             </dl>
 
+            <!--
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
@@ -47,6 +56,38 @@
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
             </button>
+            -->
         </div>
+
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-action-heading">Επαλήθευση</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <!--
+                <div class="form-group" [hidden]="!action.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                           [(ngModel)]="action.id" readonly />
+                </div>
+                -->
+                <div class="form-group">
+                    <label class="form-control-label" for="field_visible">Η κατάθεση είναι σωστή και δικαιούται το βιβλίο.</label>
+                    <input type="checkbox" class="form-control" name="visible" id="field_visible" [(ngModel)]="action.verified" />
+                    <label class="form-control-label" for="field_amount">Το ποσό που κατατέθηκε σε ευρώ είναι: </label>
+                    <input type="number" class="form-control" name="amount" id="field_amount" [(ngModel)]="action.amount" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+
     </div>
+
 </div>

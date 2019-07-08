@@ -8,6 +8,8 @@ entity Action {
     depositReceipt ImageBlob
     messageText String
     visible Boolean
+    verified Boolean
+    amount Double
 }
 
 entity Organization {

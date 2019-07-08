@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h4 class="modal-title">Προαιρετική Λίστα Φιλανθρωπικών Ιδρυμάτων </h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('X button clicked')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">Ίδρυμα</th>
+            <th scope="col">Τράπεζα</th>
+<!--            <th scope="col">Λογαριασμός</th>-->
+            <th scope="col">IBAN</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let organization of organizations">
+                <td>
+                    {{ organization.name }}
+                </td>
+                <td>
+                    <tr *ngFor="let orgAccount of organization.account">
+                        <td>{{ orgAccount.bank }}</td>
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+    <!--                    <td>{{ acc.iban }}</td>-->
+                    </tr>
+                </td>
+    <!--            <td>-->
+    <!--                <tr *ngFor="let acc of organization.account; index as j">-->
+    <!--                    <td>{{ acc.bank }}</td>-->
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+    <!--                    <td>{{ acc.iban }}</td>-->
+    <!--                </tr>-->
+    <!--            </td>-->
+                <td>
+                    <tr *ngFor="let orgAccount of organization.account">
+    <!--                    <td>{{ acc.bank }}</td>-->
+    <!--                    <td>{{ acc.logariasmos }}</td>-->
+                        <td>{{ orgAccount.iban }}</td>
+                    </tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Κλείσιμο</button>
+</div>

@@ -48,6 +48,14 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="verified" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="amount" type="double">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         
