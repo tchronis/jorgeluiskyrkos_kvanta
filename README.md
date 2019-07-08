@@ -1,5 +1,22 @@
 # jorgeluiskyrkos
-This application was generated using JHipster 5.0.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.0.2](https://www.jhipster.tech/documentation-archive/v5.0.2).
+This application was generated using JHipster 5.0.2, you can find
+documentation and help at
+[https://www.jhipster.tech/documentation-archive/v5.0.2](https://www.jhipster.tech/documentation-archive/v5.0.2).
+
+## Deployment
+
+Your app should now be live. To view it run
+
+        heroku open
+
+And you can view the logs with this command
+
+        heroku logs --tail
+
+After application modification, redeploy it with
+
+        jhipster heroku
+
 
 ## Development
 

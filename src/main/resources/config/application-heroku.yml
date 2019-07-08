@@ -12,7 +12,7 @@
 
 eureka:
     instance:
-        hostname: jorgeluiskyrkos.herokuapp.com
+        hostname: ethical-kvanta.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
     client:
