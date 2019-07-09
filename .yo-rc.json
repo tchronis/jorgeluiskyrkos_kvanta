@@ -33,6 +33,7 @@
     "languages": [
       "el",
       "en"
-    ]
+    ],
+    "herokuDeployType": "jar"
   }
 }

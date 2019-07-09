@@ -20,7 +20,7 @@
                         [(ngModel)]="action.email" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_address">Διεύθυνση (οδός, αριθμός, Πολή, ΤΚ)</label>
+                    <label class="form-control-label" for="field_address">Διεύθυνση (οδός, αριθμός, Πόλη, ΤΚ)</label>
                     <input type="text" class="form-control" name="address" id="field_address"
                         [(ngModel)]="action.address" required/>
                     <div [hidden]="!(editForm.controls.address?.dirty && editForm.controls.address?.invalid)">
