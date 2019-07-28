@@ -10,12 +10,12 @@
                         [(ngModel)]="action.id" readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_name">(Προαιρετικό) Όνομα</label>
+                    <label class="form-control-label" for="field_name">Ονοματεπώνυμο</label>
                     <input type="text" class="form-control" name="name" id="field_name"
-                        [(ngModel)]="action.name" />
+                        [(ngModel)]="action.name" required/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_email">(Προαιρετικό) Email (για επικοινωνία σε περίπτωση κάποιας δυσλειτουργίας)</label>
+                    <label class="form-control-label" for="field_email">Email (για επικοινωνία σε περίπτωση κάποιας δυσλειτουργίας)</label>
                     <input type="text" class="form-control" name="email" id="field_email"
                         [(ngModel)]="action.email" />
                 </div>
@@ -31,16 +31,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_depositReceipt">Καταθετήριο (σκαναρισμένη εικόνα)</label>
+                    <label class="form-control-label" for="field_depositReceipt">Καταθετήριο (σκαναρισμένη εικόνα η pdf)</label>
                     <div>
-                        <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-height: 100px;" *ngIf="action.depositReceipt" alt="action image"/>
                         <div *ngIf="action.depositReceipt" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(action.depositReceiptContentType, action.depositReceipt)" jhiTranslate="entity.action.open">open</a><br>
                             <span class="pull-left">{{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}</span>
-                            <button type="button" (click)="clearInputImage('depositReceipt', 'depositReceiptContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                            <button type="button" (click)="action.depositReceipt=null;action.depositReceiptContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
                                 <fa-icon [icon]="'times'"></fa-icon>
                             </button>
                         </div>
-                        <input type="file" id="file_depositReceipt" (change)="setFileData($event, action, 'depositReceipt', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        <input type="file" id="file_depositReceipt" (change)="setFileData($event, action, 'depositReceipt', false)" jhiTranslate="entity.action.addblob"/>
                     </div>
                     <input type="hidden" class="form-control" name="depositReceipt" id="field_depositReceipt"
                         [(ngModel)]="action.depositReceipt" />
@@ -48,7 +49,7 @@
                         [(ngModel)]="action.depositReceiptContentType" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_messageText">Μήνυμα προς τον jorgeluiskyrkos</label>
+                    <label class="form-control-label" for="field_messageText">Μήνυμα προς τον Γιώργο Λούη Κύρκο</label>
                     <input type="text" class="form-control" name="messageText" id="field_messageText"
                         [(ngModel)]="action.messageText" />
                 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -15,12 +15,7 @@ export class ActionUpdateComponent implements OnInit {
     private _action: IAction;
     isSaving: boolean;
 
-    constructor(
-        private dataUtils: JhiDataUtils,
-        private actionService: ActionService,
-        private elementRef: ElementRef,
-        private activatedRoute: ActivatedRoute
-    ) {}
+    constructor(private dataUtils: JhiDataUtils, private actionService: ActionService, private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
         this.isSaving = false;
@@ -39,10 +34,6 @@ export class ActionUpdateComponent implements OnInit {
 
     setFileData(event, entity, field, isImage) {
         this.dataUtils.setFileData(event, entity, field, isImage);
-    }
-
-    clearInputImage(field: string, fieldContentType: string, idInput: string) {
-        this.dataUtils.clearInputImage(this.action, this.elementRef, field, fieldContentType, idInput);
     }
 
     previousState() {

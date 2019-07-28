@@ -3,7 +3,10 @@
     "fields": [
         {
             "fieldName": "name",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "email",
@@ -19,7 +22,7 @@
         {
             "fieldName": "depositReceipt",
             "fieldType": "byte[]",
-            "fieldTypeBlobContent": "image"
+            "fieldTypeBlobContent": "any"
         },
         {
             "fieldName": "messageText",

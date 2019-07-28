@@ -2,10 +2,10 @@
 //jhipster import-jdl kvanta.jh --force
 
 entity Action {
-    name String
+    name String required
     email String
     address String required
-    depositReceipt ImageBlob
+    depositReceipt Blob
     messageText String
     visible Boolean
     verified Boolean

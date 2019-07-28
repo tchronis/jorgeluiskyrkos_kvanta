@@ -33,9 +33,7 @@
                 <td>{{action.email}}</td>
                 <td>{{action.address}}</td>
                 <td>
-                    <a *ngIf="action.depositReceipt" (click)="openFile(action.depositReceiptContentType, action.depositReceipt)">
-                        <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-height: 30px;" alt="action image"/>
-                    </a>
+                    <a *ngIf="action.depositReceipt" (click)="openFile(action.depositReceiptContentType, action.depositReceipt)" jhiTranslate="entity.action.open">open</a>
                     <span *ngIf="action.depositReceipt">{{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}</span>
                 </td>
                 <td>{{action.messageText}}</td>

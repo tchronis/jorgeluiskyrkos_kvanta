@@ -17,16 +17,14 @@
                 <dd>
                     <span>{{action.address}}</span>
                 </dd>
-                <dt><span>Καταθετήριο (σκαναρισμένη εικόνα)</span></dt>
+                <dt><span>Καταθετήριο (σκαναρισμένη εικόνα η pdf)</span></dt>
                 <dd>
                     <div *ngIf="action.depositReceipt">
-                        <a (click)="openFile(action.depositReceiptContentType, action.depositReceipt)">
-                            <img [src]="'data:' + action.depositReceiptContentType + ';base64,' + action.depositReceipt" style="max-width: 100%;" alt="action image"/>
-                        </a>
+                        <a (click)="openFile(action.depositReceiptContentType, action.depositReceipt)" jhiTranslate="entity.action.open">open</a>
                         {{action.depositReceiptContentType}}, {{byteSize(action.depositReceipt)}}
                     </div>
                 </dd>
-                <dt><span>Μύνημα προς τον jorgeluiskyrkos</span></dt>
+                <dt><span>Μύνημα προς τον Γιώργο Λούη Κύρκο</span></dt>
                 <dd>
                     <span>{{action.messageText}}</span>
                 </dd>
