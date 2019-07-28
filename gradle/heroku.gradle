@@ -1,7 +1,7 @@
 apply plugin: 'com.heroku.sdk.heroku-gradle'
 
 heroku {
-  appName = "ethical-kvanta"
+  appName = "jorgeluiskyrkos"
 }
 
 gradle.taskGraph.whenReady {taskGraph ->
